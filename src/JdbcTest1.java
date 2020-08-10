@@ -7,10 +7,13 @@ class JdbcTest1
     {
         try
         {
+            //String url = "jdbc:mysql://root:3306/";
             String url = "jdbc:mysql://localhost/";
+
             Connection conn = DriverManager.getConnection(url, "root", "bupesap2");
             Statement st = conn.createStatement();
-            st.executeUpdate("INSERT INTO students (name, age, address, belt) VALUES " +
+//-------//THIS STATEMENT BELOW IS THROWING A "No database selected" ERROR//---------------//
+          st.executeUpdate("INSERT INTO students (name, age, address, belt) VALUES " +
                      "('John Smith', 17, '560 Smith Lane', 'blue')");
 
             conn.close();
